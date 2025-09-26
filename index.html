@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SavorySearch | Find Recipes with Your Ingredients</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Decorative floating shapes -->
+  <div class="floating-element" style="top: 10%; left: 5%; width: 120px; height: 120px; background: rgba(255, 107, 107, 0.1);" aria-hidden="true"></div>
+  <div class="floating-element" style="top: 60%; right: 8%; width: 80px; height: 80px; background: rgba(78, 205, 196, 0.15);" aria-hidden="true"></div>
+  
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-utensils" aria-hidden="true"></i>
+          <span>SavorySearch</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="/index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="favorites.html"><i class="fas fa-heart"></i> Favorites</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Discover Delicious Recipes</h1>
+      <p>Find perfect recipes based on ingredients you already have. Reduce food waste and save time with our smart suggestions!</p>
+    </div>
+  </section>
+  
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Search Section -->
+    <section class="search-section">
+      <div class="search-form">
+        <div class="ingredient-input-container">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input 
+            type="text" 
+            class="ingredient-input" 
+            id="ingredientInput" 
+            placeholder="What ingredients do you have? (e.g., chicken, tomatoes, pasta)" 
+            aria-label="Enter ingredients">
+        </div>
+        <button class="search-btn" id="searchBtn">
+          <i class="fas fa-search"></i> Find Recipes
+        </button>
+      </div>
+      <div class="filter-section">
+        <span class="filter-label"><i class="fas fa-filter"></i> Filter by:</span>
+        <select class="filter-select" id="dietFilter">
+          <option value="">Any Diet</option>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="vegan">Vegan</option>
+          <option value="glutenFree">Gluten Free</option>
+          <option value="dairyFree">Dairy Free</option>
+        </select>
+        <select class="filter-select" id="cuisineFilter">
+          <option value="">Any Cuisine</option>
+          <option value="american">American</option>
+          <option value="asian">Asian</option>
+          <option value="italian">Italian</option>
+          <option value="mexican">Mexican</option>
+          <option value="indian">Indian</option>
+        </select>
+        <select class="filter-select" id="maxTimeFilter">
+          <option value="">Any Time</option>
+          <option value="15">15 minutes or less</option>
+          <option value="30">30 minutes or less</option>
+          <option value="45">45 minutes or less</option>
+          <option value="60">1 hour or less</option>
+        </select>
+      </div>
+    </section>
+    
+    <!-- Results Section -->
+    <section class="results-section">
+      <h2 class="section-title"><i class="fas fa-utensils"></i> Recipe Suggestions</h2>
+      <div id="recipeResults" class="recipe-grid">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Enter ingredients above to find delicious recipes!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About SavorySearch</h3>
+          <p>Our mission is to help you create delicious meals while reducing food waste. Find recipes based on what you already have in your kitchen!</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="#">Browse Recipes</a></p>
+          <p><a href="#">Cooking Tips</a></p>
+          <p><a href="#">Meal Planner</a></p>
+          <p><a href="#">Nutrition Info</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Newsletter</h3>
+          <p>Subscribe to get weekly recipe suggestions and cooking tips!</p>
+          <div class="search-form">
+            <input type="email" class="ingredient-input" placeholder="Your email address" aria-label="Email address">
+            <button class="search-btn">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 SavorySearch. All rights reserved. | Made with <i class="fas fa-heart" style="color: var(--primary);" aria-hidden="true"></i> for food lovers</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle" aria-hidden="true"></i>
+    <span id="toastMessage">Recipe saved to favorites!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
